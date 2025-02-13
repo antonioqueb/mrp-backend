@@ -1,7 +1,8 @@
 const { Sequelize } = require("sequelize");
 
 // Conexión a PostgreSQL con Sequelize
-const sequelize = new Sequelize(process.env.PG_URI, {
+// Cambia 'process.env.PG_URI' a 'process.env.DATABASE_URL'
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres",
   logging: false, // Evita logs innecesarios en consola
 });

@@ -7,7 +7,7 @@ WORKDIR /app
 # Copiar archivos de configuración
 COPY package.json package-lock.json ./
 
-# Instalar TODAS las dependencias (incluidas las de desarrollo)
+# Instalar TODAS las dependencias (incluyendo dotenv)
 RUN npm install --include=dev
 
 # Copiar el código fuente

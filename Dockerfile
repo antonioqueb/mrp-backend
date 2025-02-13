@@ -1,13 +1,13 @@
 # Imagen base de Node.js
 FROM node:18-alpine
 
-# Configurar directorio de trabajo
+# Configurar directorio de trabajo dentro del contenedor
 WORKDIR /app
 
 # Copiar archivos de configuración
 COPY package.json package-lock.json ./
 
-# Instalar dependencias
+# Instalar dependencias (incluso las de desarrollo para nodemon)
 RUN npm install
 
 # Copiar el código fuente
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 4000
 
 # Comando por defecto
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

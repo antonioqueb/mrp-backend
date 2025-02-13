@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Instalar dependencias (incluso las de desarrollo para nodemon)
-RUN npm install
+RUN npm install --include=dev
 
-# Copiar el código fuente
+# Copiar el código fuente al contenedor
 COPY . .
 
 # Exponer el puerto del servidor
 EXPOSE 4000
 
-# Comando por defecto
+# Comando por defecto para ejecutar el backend
 CMD ["npm", "run", "dev"]
